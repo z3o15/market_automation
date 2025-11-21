@@ -1,167 +1,43 @@
 {
-    "automation": {
-        "clickDelay": {
-            "min": 300,
-            "max": 800,
-            "default": 500
-        },
-        "scrollDelay": {
-            "min": 1500,
-            "max": 2500,
-            "default": 2000
-        },
-        "maxRetries": 3,
-        "retryDelay": 1000,
-        "scrollInterval": 2000,
-        "maxScrollCount": 10,
-        "maxPages": 10,
-        "itemsPerPage": 20,
-        "pauseBetweenPages": 3000
+  "device": {
+    "serial": "127.0.0.1:5557",
+    "adb_path": "C:\\Program Files\\Netease\\MuMu\\nx_main\\adb.exe"
+  },
+  "screenshot": {
+    "save_path": "data/screenshots/"
+  },
+  "uiautomator2": {
+    "device_id": "127.0.0.1:5557",
+    "click_delay": 500,
+    "scroll_delay": 2000,
+    "max_retries": 3,
+    "retry_delay": 1000,
+    "timeout": 10000
+  },
+  "market_automation": {
+    "market_button": {
+      "x": 366,
+      "y": 1204
     },
-    "market": {
-        "apiEndpoints": [
-            "https://api.example.com/market/equipment",
-            "https://backup.example.com/market/equipment"
-        ],
-        "requestTimeout": 10000,
-        "retryInterval": 5000,
-        "maxConcurrentRequests": 3,
-        "cacheTimeout": 300000,
-        "refreshInterval": 60000
+    "quote_button": {
+      "x": 320,
+      "y": 445
     },
-    "equipment": {
-        "targetTypes": ["weapon", "armor", "accessory", "consumable"],
-        "priceRange": {
-            "min": 100,
-            "max": 50000
-        },
-        "qualityLevels": ["common", "rare", "epic", "legendary"],
-        "levelRange": {
-            "min": 1,
-            "max": 100
-        },
-        "excludeKeywords": ["破损", "损坏", "过期"],
-        "includeKeywords": ["强化", "精炼", "稀有"]
+    "show_all_quotes": {
+      "x": 360,
+      "y": 900
     },
-    "detection": {
-        "antiDetection": {
-            "randomizeClicks": true,
-            "humanLikeMovement": true,
-            "variableTiming": true,
-            "randomScrollSpeed": true,
-            "simulateErrors": false,
-            "errorRate": 0.05
-        },
-        "stealthMode": true,
-        "hideRoot": true,
-        "hideDebug": true,
-        "mimicHumanBehavior": true
+    "scroll_start": {
+      "x": 360,
+      "y": 900
     },
-    "network": {
-        "userAgent": "Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36",
-        "headers": {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "X-Requested-With": "XMLHttpRequest"
-        },
-        "proxy": {
-            "enabled": false,
-            "host": "",
-            "port": 0,
-            "username": "",
-            "password": ""
-        },
-        "sslVerification": true,
-        "connectionTimeout": 15000,
-        "readTimeout": 30000
+    "scroll_end": {
+      "x": 360,
+      "y": 700
     },
-    "ui": {
-        "screenResolution": {
-            "width": 1080,
-            "height": 1920
-        },
-        "clickOffset": {
-            "x": 5,
-            "y": 5
-        },
-        "scrollSpeed": {
-            "min": 500,
-            "max": 1500
-        },
-        "waitAfterClick": 200,
-        "waitAfterScroll": 1000,
-        "elementDetectionTimeout": 5000
-    },
-    "data": {
-        "storage": {
-            "type": "sqlite",
-            "path": "/data/data/com.cyjh.elfin/market_data.db",
-            "backupPath": "/data/data/com.cyjh.elfin/market_data_backup.db"
-        },
-        "export": {
-            "format": "json",
-            "compression": true,
-            "autoExport": true,
-            "exportInterval": 3600000
-        },
-        "retention": {
-            "days": 30,
-            "maxRecords": 10000
-        }
-    },
-    "logging": {
-        "level": "INFO",
-        "maxFileSize": "10MB",
-        "maxFiles": 5,
-        "enableRemoteLogging": false,
-        "remoteEndpoint": "",
-        "logToFile": true,
-        "logPath": "/data/data/com.cyjh.elfin/market_automation.log",
-        "logRotation": true,
-        "enableDebugLog": false
-    },
-    "performance": {
-        "maxMemoryUsage": 512,
-        "gcInterval": 300000,
-        "threadPoolSize": 4,
-        "enableProfiling": false,
-        "cacheSize": 1000,
-        "batchSize": 50
-    },
-    "security": {
-        "encryptData": true,
-        "encryptionKey": "",
-        "salt": "",
-        "hashAlgorithm": "SHA-256",
-        "enableAuthentication": false,
-        "apiKey": "",
-        "apiSecret": ""
-    },
-    "notification": {
-        "enableEmail": false,
-        "emailSettings": {
-            "smtp": "",
-            "port": 587,
-            "username": "",
-            "password": "",
-            "to": ""
-        },
-        "enablePush": false,
-        "pushSettings": {
-            "service": "",
-            "apiKey": "",
-            "deviceToken": ""
-        },
-        "enableSound": true,
-        "soundFile": "/system/media/audio/notifications/Notification.ogg"
-    },
-    "advanced": {
-        "experimentalFeatures": false,
-        "betaFeatures": false,
-        "customHooks": [],
-        "luaScripts": [],
-        "plugins": [],
-        "debugMode": false,
-        "verboseLogging": false
-    }
+    "after_market_click": 3,
+    "after_quote_click": 2,
+    "after_show_all": 1,
+    "after_scroll": 1
+  }
 }

@@ -27,8 +27,8 @@ class DeviceManager:
         
         # 设备配置
         self.device_config = config_manager.get("device", {})
-        self.device_id = self.device_config.get("deviceId", "")
-        self.adb_path = self.device_config.get("adbPath", "adb")
+        self.device_id = self.device_config.get("serial", "")
+        self.adb_path = self.device_config.get("adb_path", "adb")
         self.connection_timeout = self.device_config.get("connectionTimeout", 30)
         
         # 设备信息缓存
@@ -178,8 +178,9 @@ class DeviceManager:
                 adb_command = f"-s {self.device_id} {adb_command}"
             
             # 执行命令
+            cmd_list = [self.adb_path] + adb_command.split()
             result = subprocess.run(
-                [self.adb_path] + adb_command.split(),
+                cmd_list,
                 capture_output=True,
                 text=True,
                 timeout=timeout

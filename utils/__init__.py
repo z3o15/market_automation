@@ -6,14 +6,26 @@
 
 from .config_manager import ConfigManager
 from .logger import Logger
-from .frida_manager import FridaManager
-from .lua_manager import LuaManager
 from .device_manager import DeviceManager
+from .interfaces import (
+    BaseModule,
+    ScreenshotInterface,
+    ADBInterface,
+    ImageRecognitionInterface,
+    DataProcessingInterface,
+    DatabaseInterface,
+    AutomationInterface
+)
 
 __all__ = [
     'ConfigManager',
     'Logger',
-    'FridaManager',
-    'LuaManager',
-    'DeviceManager'
+    'DeviceManager',
+    'BaseModule',
+    'ScreenshotInterface',
+    'ADBInterface',
+    'ImageRecognitionInterface',
+    'DataProcessingInterface',
+    'DatabaseInterface',
+    'AutomationInterface'
 ]
