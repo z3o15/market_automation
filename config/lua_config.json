@@ -1,0 +1,98 @@
+{
+    "lua": {
+        "scriptPath": "/data/data/com.cyjh.elfin/scripts/market_automation.lua",
+        "autoStart": false,
+        "restartOnError": true,
+        "maxRestartAttempts": 3,
+        "scriptTimeout": 300000
+    },
+    "communication": {
+        "fridaCommFile": "/data/data/com.cyjh.elfin/frida_lua_comm.json",
+        "commCheckInterval": 100,
+        "commTimeout": 5000,
+        "enableRpc": true,
+        "rpcPort": 27042
+    },
+    "ui": {
+        "marketActivityPatterns": [
+            "MarketActivity",
+            "ShopActivity",
+            "StoreActivity",
+            "MallActivity"
+        ],
+        "equipmentListIds": [
+            "equipment_list_view",
+            "market_item_list",
+            "item_grid_view"
+        ],
+        "equipmentItemPatterns": [
+            "equipment",
+            "item",
+            "gear",
+            "weapon",
+            "armor"
+        ],
+        "priceViewTags": [
+            "item_price",
+            "price_tag",
+            "cost_label"
+        ],
+        "nameViewTags": [
+            "item_name",
+            "equipment_name",
+            "title_text"
+        ]
+    },
+    "automation": {
+        "clickDelay": {
+            "min": 500,
+            "max": 1200
+        },
+        "scrollDelay": {
+            "min": 1500,
+            "max": 2500
+        },
+        "maxRetries": 3,
+        "retryDelay": 1000,
+        "maxPages": 10,
+        "itemsPerPage": 20,
+        "priceRange": {
+            "min": 100,
+            "max": 50000
+        },
+        "targetTypes": [
+            "weapon",
+            "armor",
+            "accessory",
+            "consumable"
+        ]
+    },
+    "antiDetection": {
+        "randomizeClicks": true,
+        "humanLikeMovement": true,
+        "variableTiming": true,
+        "randomScrollSpeed": true,
+        "simulateErrors": false,
+        "errorRate": 0.05,
+        "randomDelays": true,
+        "minRandomDelay": 100,
+        "maxRandomDelay": 500
+    },
+    "logging": {
+        "level": "INFO",
+        "logToFile": true,
+        "logPath": "/data/data/com.cyjh.elfin/market_automation.log",
+        "maxLogSize": "10MB",
+        "maxLogFiles": 5,
+        "enableDebugLog": false,
+        "logRotation": true
+    },
+    "data": {
+        "cacheSize": 1000,
+        "dataRetention": 86400,
+        "autoExport": true,
+        "exportInterval": 3600000,
+        "exportPath": "/data/data/com.cyjh.elfin/exports/",
+        "exportFormat": "json"
+    }
+}
